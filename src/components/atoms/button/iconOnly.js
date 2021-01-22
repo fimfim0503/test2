@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { IconBackDark } from '../../../assests'
+import { IconBackDark, IconBackLight } from '../../../assests'
 
 
 const IconOnly = ({onPress, icon}) => {
@@ -10,7 +10,7 @@ const IconOnly = ({onPress, icon}) => {
         }
 
         if(icon === 'back-light'){
-            return <IconBackDark/>;
+            return <IconBackLight/>;
         }
         return <IconBackDark/>
     };

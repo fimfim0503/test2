@@ -1,9 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+
 import { ILcatObat, ILcatPsikiater, ILcatUmum } from '../../../assests'
 import { colors, fonts } from '../../../utils'
 
-const Doktercategory = ({category}) => {
+const Doktercategory = ({category, onPress}) => {
     const Icon = ()=>{
         if (category === 'dokter obat') {
             return <ILcatUmum style={styles.illustration} />;
@@ -17,11 +18,11 @@ const Doktercategory = ({category}) => {
     }
 
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress} >
             <Icon/>
             <Text style={styles.label}>Saya Butuh </Text>
             <Text style={styles.category} > {category} </Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 

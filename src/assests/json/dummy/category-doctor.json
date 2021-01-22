@@ -2,23 +2,23 @@
     "data":[
         {
             "id":1,
-            "category":"dokter umum"
+            "category":"Dokter Umum"
         },
         {
             "id":2,
-            "category":"psikiatri"
+            "category":"Psikiatri"
         },
         {
             "id":3,
-            "category":"obat"
+            "category":"Obat"
         },
         {
             "id":4,
-            "category":"dokter umum"
+            "category":"Spesialis lain"
         },
         {
             "id":5,
-            "category":"dokter Obsgyn"
+            "category":"Dokter Obsgyn"
         }
     ]
 }

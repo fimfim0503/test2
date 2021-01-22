@@ -5,7 +5,7 @@ import { Doktercategory, Gap, HomeProfile, NewsItem, RatedDoctor } from '../../c
 import { colors, fonts } from '../../utils'
 import {JSONcategoryDoctor} from '../../assests'
 
-const Doctor = () => {
+const Doctor = ({navigation}) => {
     return (
         <View style={styles.page}>
             <View style={styles.content}>
@@ -23,13 +23,10 @@ const Doctor = () => {
                                 <Gap width={16} />
                                 {
                                     JSONcategoryDoctor.data.map(item=>{
-                                        return  <Doktercategory key={item.id} category={item.category} />
+                                        return  <Doktercategory  category={item.category} onPress={()=>navigation.navigate('chooseDoctor')} />
                                     })
                                 }
-                                <Doktercategory category="obat" />
-                                <Doktercategory category="psikiatri" />
-                                <Doktercategory category="umum" />
-                                <Doktercategory category="obat" />
+                                
                                 <Gap width={22} />
                             </View>
                         </ScrollView>

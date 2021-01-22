@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import {createStackNavigator} from '@react-navigation/stack';
-import { Doctor, GetStarted, Hospitals, Login, Messages, Register, Splash, UploadPhoto } from '../pages';
+import { chooseDoctor, Doctor, GetStarted, Hospitals, Login, Messages, Register, Splash, UploadPhoto } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -51,6 +51,11 @@ const Router = () => {
             <Stack.Screen 
                 name="MainApp" 
                 component={MainApp} 
+                options={{headerShown:false}}
+             />
+            <Stack.Screen 
+                name="chooseDoctor" 
+                component={chooseDoctor} 
                 options={{headerShown:false}}
              />
         </Stack.Navigator>
