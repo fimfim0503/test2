@@ -23,9 +23,10 @@ const Doctor = ({navigation}) => {
                                 <Gap width={16} />
                                 {
                                     JSONcategoryDoctor.data.map(item=>{
-                                        return  <Doktercategory  category={item.category} onPress={()=>navigation.navigate('chooseDoctor')} />
+                                        return  <Doktercategory key={item.id} category={item.category} onPress={()=>navigation.navigate('chooseDoctor')} />
                                     })
                                 }
+                                
                                 
                                 <Gap width={22} />
                             </View>

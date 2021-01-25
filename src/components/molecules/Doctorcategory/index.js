@@ -7,7 +7,7 @@ import { colors, fonts } from '../../../utils'
 const Doktercategory = ({category, onPress}) => {
     const Icon = ()=>{
         if (category === 'dokter obat') {
-            return <ILcatUmum style={styles.illustration} />;
+            return <ILcatUmum style={styles.illustration} />
         }
         if (category === 'psikiater') {
             return <ILcatPsikiater style={styles.illustration} />

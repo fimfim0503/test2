@@ -5,7 +5,10 @@ import Doktercategory from './Doctorcategory';
 import RatedDoctor from './RatedDoctor';
 import NewsItem from './NewsItem';
 import ListDoctor from './listDoctor';
-import ListHospital from './ListHospital'
+import ListHospital from './ListHospital';
+import KhatItem from './chatitem';
+import Inputchat from './Inputchat';
+
 
 
 export {
@@ -16,5 +19,9 @@ export {
     RatedDoctor,
     NewsItem,
     ListDoctor,
-    ListHospital
+    ListHospital,
+    KhatItem,
+    Inputchat
+    
+    
 };
