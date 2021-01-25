@@ -5,15 +5,15 @@ import { colors, fonts } from '../../utils'
 
 const chatting = () => {
     return (
-        <View>
+        <View style={styles.page}>
             <Header type="dark-profile" title ="Udin Mulyadin" />
             <Text style={styles.chatDate} >Senin, 21 maret 2021</Text>
-            
-           <KhatItem/>
-           <KhatItem/>
-           <KhatItem/>
-           <KhatItem/>
-
+            <View style={styles.content}>
+                <KhatItem/>
+                <KhatItem/>
+                <KhatItem/>
+                <KhatItem/>
+            </View>
            <Inputchat/>
             
         </View>
@@ -29,5 +29,12 @@ const styles = StyleSheet.create({
         color:colors.text.secondary,
         marginVertical:20,
         textAlign:'center'
+    },
+    page:{
+        backgroundColor:colors.white,
+        flex:1,
+    },
+    content:{
+        flex:1,
     }
 })
