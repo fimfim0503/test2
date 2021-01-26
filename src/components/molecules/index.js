@@ -9,6 +9,7 @@ import ListHospital from './ListHospital';
 import KhatItem from './chatitem';
 import Inputchat from './Inputchat';
 import Profile from './Profile';
+import ProfileItem from './ProfileItem';
 
 
 
@@ -24,6 +25,7 @@ export {
     KhatItem,
     Inputchat,
     Profile,
+    ProfileItem,
     
     
 };
