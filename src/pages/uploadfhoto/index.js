@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import { IconAddPhoto, ILNulPhoto } from '../../assests'
 import { Button, Gap, Header, Link } from '../../components'
 
-const UploadPhoto = () => {
+const UploadPhoto = ({navigation}) => {
     return (
         <View style={styles.page}>
             <Header title="Upload Fhoto"/>
@@ -19,9 +19,9 @@ const UploadPhoto = () => {
                 </View>
 
                 <View>
-                    <Button title="Upload and continue" />
+                    <Button title="Upload and continue" onPress={()=>navigation.replace('MainApp')} />
                     <Gap height={30} />
-                    <Link title="Skip for this" align="center" size={16} />
+                    <Link title="Skip for this" align="center" size={16} onPress={()=>navigation.replace('MainApp')} />
 
                 </View>
 

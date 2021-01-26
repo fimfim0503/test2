@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Button, Gap, Header, Profile, ProfileItem} from '../../components'
 import { colors } from '../../utils'
 
-const DoctorProfile = () => {
+const DoctorProfile = ({navigation}) => {
     return (
         <View style={styles.page}>
-            <Header title="Dokter Profile" />
+            <Header title="Dokter Profile" onPress={()=>navigation.goBack()} />
             <Profile name="Dr. Willy" desc="Dokter Jiwa" />
             <Gap height={10} />
             
@@ -14,7 +14,7 @@ const DoctorProfile = () => {
             <ProfileItem label="Tempat Praktik" value="RSU Dr. Slamet Garut"/>
             <ProfileItem label="STR" value="2354354354543"/>
             <View style={styles.action} >
-            <Button title="Start consultation" />
+            <Button title="Start consultation" onPress={()=>navigation.navigate('chatting')} />
 
             </View>
         </View>

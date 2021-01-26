@@ -16,7 +16,7 @@ const GetStarted = ({navigation})=>{
             <View>
                 <Button title="Get Started" onPress={()=> navigation.navigate('Register') } />
                 <Gap height={16}/>
-                <Button type="secondary" title="Sign In" onPress={()=> navigation.navigate('Login')} />               
+                <Button type="secondary" title="Sign In" onPress={()=> navigation.replace('Login')} />               
             </View>
         </ImageBackground>
        
