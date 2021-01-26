@@ -4,10 +4,11 @@ import HomeProfile from './homeprofile';
 import Doktercategory from './Doctorcategory';
 import RatedDoctor from './RatedDoctor';
 import NewsItem from './NewsItem';
-import ListDoctor from './listDoctor';
+import List from './List';
 import ListHospital from './ListHospital';
 import KhatItem from './chatitem';
 import Inputchat from './Inputchat';
+import Profile from './Profile';
 
 
 
@@ -18,10 +19,11 @@ export {
     Doktercategory,
     RatedDoctor,
     NewsItem,
-    ListDoctor,
+    List,
     ListHospital,
     KhatItem,
-    Inputchat
+    Inputchat,
+    Profile,
     
     
 };

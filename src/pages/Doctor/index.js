@@ -12,7 +12,7 @@ const Doctor = ({navigation}) => {
                 <ScrollView showsVerticalScrollIndicator={false} >
                     <View style={styles.wraperSection}>
                         <Gap width={32}/>
-                    <HomeProfile/>
+                    <HomeProfile onPress={()=> navigation.navigate('UserProfile')} />
                     <Text style={styles.welcome}>Mau Konsultasi dengan Siapa hari ini </Text>
 
                     </View>
