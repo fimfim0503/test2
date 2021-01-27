@@ -4,6 +4,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Header, Input, Loading } from '../../components'
 import { colors, useForm } from '../../utils'
 import {Fire} from '../../config'
+import { showMessage, hideMessage } from "react-native-flash-message";
+
 
 const Register = ({navigation}) => {
     // const [fullname, setFullname] = useState('');
@@ -22,7 +24,7 @@ const Register = ({navigation}) => {
     const onKontinue = () => {
         console.log (form);
         setLoading(true);
-
+            
         Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
         .then((success) => {
             setLoading (false);
@@ -33,7 +35,12 @@ const Register = ({navigation}) => {
         .catch((error) => {
             const errorMessage = error.message;
             setLoading (false);
-            console.log ('error register: ', errorMessage);
+            showMessage({
+                message: errorMessage,
+                type:'default',
+                backgroundColor:colors.error,
+                color:colors.white
+            })
         });
 
         //()=> navigation.navigate('UploadPhoto')
