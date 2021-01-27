@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import { Button, Gap, Header, Input } from '../../components'
+import { Button, Gap, Header, Input, Loading } from '../../components'
 import { colors, useForm } from '../../utils'
 import {Fire} from '../../config'
 
@@ -16,17 +16,23 @@ const Register = ({navigation}) => {
         profession:'',
         email:'',
         password:''
-    })
+    });
+
+    const [loading, setLoading] = useState(false)
     const onKontinue = () => {
-        // console.log (form)
+        console.log (form);
+        setLoading(true);
 
         Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
         .then((success) => {
+            setLoading (false);
+            setForm('reset')
             console.log('register success: ', success);
             // ...
         })
         .catch((error) => {
             const errorMessage = error.message;
+            setLoading (false);
             console.log ('error register: ', errorMessage);
         });
 
@@ -36,6 +42,7 @@ const Register = ({navigation}) => {
     }
 
     return (
+        <>
         <View style={styles.page}>
            <Header onPress={()=>navigation.goBack()} title="Daftar Akun" />
             <View style={styles.content}>
@@ -68,6 +75,9 @@ const Register = ({navigation}) => {
             </View>
             
         </View>
+        {loading && <Loading/>  }
+        
+        </>
     )
 }
 
