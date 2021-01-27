@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Header, Input } from '../../components'
 import { colors, useForm } from '../../utils'
+import {Fire} from '../../config'
 
 const Register = ({navigation}) => {
     // const [fullname, setFullname] = useState('');
@@ -17,7 +18,18 @@ const Register = ({navigation}) => {
         password:''
     })
     const onKontinue = () => {
-        console.log (form)
+        // console.log (form)
+
+        Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
+        .then((success) => {
+            console.log('register success: ', success);
+            // ...
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log ('error register: ', errorMessage);
+        });
+
         //()=> navigation.navigate('UploadPhoto')
 
 
