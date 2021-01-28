@@ -44,6 +44,7 @@ const Register = ({navigation}) => {
         });
 
         //()=> navigation.navigate('UploadPhoto')
+        //perlu teu ....
 
 
     }
