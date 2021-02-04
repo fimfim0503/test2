@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Header, Input, Loading } from '../../components'
-import { colors, useForm } from '../../utils'
+import { colors, useForm, storeData, getData } from '../../utils'
 import {Fire} from '../../config'
 import { showMessage, hideMessage } from "react-native-flash-message";
 
@@ -21,14 +21,31 @@ const Register = ({navigation}) => {
     });
 
     const [loading, setLoading] = useState(false)
+    
+  
+
     const onKontinue = () => {
         console.log (form);
+       
+       
         setLoading(true);
             
         Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
         .then((success) => {
             setLoading (false);
             setForm('reset')
+
+            const data = {
+                fullname:form.fullname,
+                profession:form.profession,
+                email :form.email,
+            }
+            Fire.database()
+            .ref('users/' + success.user.uid+ '/')
+            .set(data);
+            storeData('user', form);
+            navigation.navigate('UploadPhoto', data);
+
             console.log('register success: ', success);
             // ...
         })
@@ -43,8 +60,8 @@ const Register = ({navigation}) => {
             })
         });
 
-        //()=> navigation.navigate('UploadPhoto')
-        //perlu teu ....
+        // ()=> navigation.navigate('UploadPhoto')
+        // perlu teu ....
 
 
     }

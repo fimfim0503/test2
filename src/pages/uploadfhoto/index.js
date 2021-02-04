@@ -1,25 +1,39 @@
-import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import { IconAddPhoto, ILNulPhoto } from '../../assests'
+import React, {useState} from 'react'
+import { Image, ImagePickerIOS, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { IconAddPhoto, IconRemovePhoto, ILNulPhoto } from '../../assests'
 import { Button, Gap, Header, Link } from '../../components'
 
-const UploadPhoto = ({navigation}) => {
+
+
+const UploadPhoto = ({navigation, route}) => {
+    const {fullname, profession} = route.params;
+   ;
+
+    const [hasPhoto, setHasPhoto]= useState(false);
+    const getImage = ()=> {
+        
+        
+    }
     return (
         <View style={styles.page}>
             <Header title="Upload Fhoto"/>
             <View style={styles.content} >
                 <View style={styles.profile} >
-                    <View style={styles.avatarWraper} >
+                    <TouchableOpacity style={styles.avatarWraper} onPress={getImage} >
                         <Image source={ILNulPhoto} style={styles.avatar} />
-                        <IconAddPhoto style={styles.addPhoto} />
-                    </View>
+                        {hasPhoto && <IconRemovePhoto style={styles.addPhoto} />}
+                        {!hasPhoto && <IconAddPhoto style={styles.addPhoto} /> }
+                    </TouchableOpacity>
 
-                    <Text style={styles.name}>Tutu Gondewa</Text>
-                    <Text style={styles.profession}>Project Manager</Text>
+                    <Text style={styles.name}>{fullname}</Text>
+                    <Text style={styles.profession}>{profession}</Text>
                 </View>
 
                 <View>
-                    <Button title="Upload and continue" onPress={()=>navigation.replace('MainApp')} />
+                    <Button 
+                        disable
+                        title="Upload and continue" 
+                        onPress={()=>navigation.replace('MainApp')} />
                     <Gap height={30} />
                     <Link title="Skip for this" align="center" size={16} onPress={()=>navigation.replace('MainApp')} />
 
