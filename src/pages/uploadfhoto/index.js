@@ -5,6 +5,7 @@ import { Button, Gap, Header, Link } from '../../components'
 
 
 
+
 const UploadPhoto = ({navigation, route}) => {
     const {fullname, profession} = route.params;
    ;
